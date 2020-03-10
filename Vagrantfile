@@ -32,6 +32,9 @@ printf "alias kubectl='microk8s.kubectl'\n" >> /home/vagrant/.bashrc
 printf "source /etc/bash_completion\n" >> /home/vagrant/.bashrc
 printf "source <(kubectl completion bash)\n" >> /home/vagrant/.bashrc
 
+## Disable ipv6 localhost (https://github.com/ubuntu/microk8s/issues/498)
+sudo sed -i 's/^::1/\#::1/g' /etc/hosts
+
 # extras
 sudo apt-get -y install bash-completion
 SCRIPT
