@@ -1,5 +1,5 @@
-DOCKER_VERSION = '5:19.03.12~3-0~ubuntu-focal'
-PODMAN_VERSION = '2.0.2~2'
+DOCKER_VERSION = '5:19.03.7~3-0~ubuntu-bionic'
+PODMAN_VERSION = '2.0.4~1'
 MK8S_CHANNEL = '1.17/stable'
 
 CPUS = '4'
@@ -50,8 +50,8 @@ sudo apt-get -y install bash-completion
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-20.04"
-  config.vm.box_version = "202005.21.0"
+  config.vm.box = "bento/ubuntu-18.04"
+  config.vm.box_version = "202007.17.0"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--cpus", "#{CPUS}"] # set number of vcpus
